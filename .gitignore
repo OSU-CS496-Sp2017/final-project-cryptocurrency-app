@@ -1,0 +1,8 @@
+*.iml
+.gradle
+/local.properties
+CryptoCurrencyApp/.idea/*
+.DS_Store
+/build
+/captures
+.externalNativeBuild
