@@ -3,6 +3,7 @@ package com.example.cryptocurrencyapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.example.cryptocurrencyapp.utils.CryptonatorUtils;
@@ -12,6 +13,9 @@ import com.example.cryptocurrencyapp.utils.CryptonatorUtils;
  */
 
 public class CryptoCurrencyDetailActivity extends AppCompatActivity {
+
+    private static final String TAG = CryptoCurrencyDetailActivity.class.getSimpleName();
+
     private TextView mCryptoCurrencyNameTv;
     private TextView mCryptoCurrencyPriceTv;
     private TextView mCryptoCurrencyChangeTv;
@@ -22,7 +26,7 @@ public class CryptoCurrencyDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.crypto_currency_item);
+        setContentView(R.layout.activity_crypto_currency_detail);
 
         mCryptoCurrencyNameTv = (TextView)findViewById(R.id.tv_crypto_currency_name);
         mCryptoCurrencyPriceTv = (TextView)findViewById(R.id.tv_crypto_currency_price);
@@ -30,27 +34,22 @@ public class CryptoCurrencyDetailActivity extends AppCompatActivity {
         mCryptoCurrencyVolumeTv = (TextView)findViewById(R.id.tv_crypto_currency_volume);
 
 
-
-
         Intent intent = getIntent();
-        if (intent != null) {
-            mCryptoItem = (CryptonatorUtils.CryptoCurrencyItem) intent.getSerializableExtra(CryptonatorUtils.CryptoCurrencyItem.EXTRA_CRYPTO_RESULT);
+        if (intent != null && intent.hasExtra(CryptonatorUtils.CryptoCurrencyItem.EXTRA_CRYPTO_RESULT)) {
+            mCryptoItem = (CryptonatorUtils.CryptoCurrencyItem)intent.getSerializableExtra(
+                                CryptonatorUtils.CryptoCurrencyItem.EXTRA_CRYPTO_RESULT);
+            Log.d(TAG, "mCryptoItem: " + mCryptoItem.toString());
+            fillInLayoutText(mCryptoItem);
         }
-
     }
 
 
     private void fillInLayoutText(CryptonatorUtils.CryptoCurrencyItem CryptoItem)
     {
-
-        mCryptoCurrencyNameTv.setText("BitCoin");
-        mCryptoCurrencyPriceTv.setText("10000");
-        mCryptoCurrencyChangeTv.setText("12 Hours");
-        mCryptoCurrencyVolumeTv.setText("A lot");
-//
-//        mCryptoCurrencyNameTv.setText(CryptoItem.toString());
-//        mCryptoCurrencyPriceTv.setText(CryptoItem.toString());
-//        mCryptoCurrencyChangeTv.setText(CryptoItem.toString());
-//        mCryptoCurrencyVolumeTv.setText(CryptoItem.toString());
+        Log.d(TAG, "In fillInLayoutText " + CryptoItem.name);
+        mCryptoCurrencyNameTv.setText(CryptoItem.name);
+        mCryptoCurrencyPriceTv.setText(CryptoItem.price.toString());
+        mCryptoCurrencyChangeTv.setText(CryptoItem.change.toString());
+        mCryptoCurrencyVolumeTv.setText(CryptoItem.volume.toString());
     }
 }
