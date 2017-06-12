@@ -48,8 +48,8 @@ public class CryptoCurrencyDetailActivity extends AppCompatActivity {
     {
         Log.d(TAG, "In fillInLayoutText " + CryptoItem.name);
         mCryptoCurrencyNameTv.setText(CryptoItem.name);
-        mCryptoCurrencyPriceTv.setText(CryptoItem.price.toString());
-        mCryptoCurrencyChangeTv.setText(CryptoItem.change.toString());
-        mCryptoCurrencyVolumeTv.setText(CryptoItem.volume.toString());
+        mCryptoCurrencyPriceTv.setText("Price (USD): " + CryptoItem.price.toString());
+        mCryptoCurrencyChangeTv.setText("Last Hour % Change: " + CryptoItem.change.toString());
+        mCryptoCurrencyVolumeTv.setText("Last 24 Hour Total Trade Volume: " + CryptoItem.volume.toString());
     }
 }
