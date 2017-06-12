@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">CryptoCurrencyApp</string>
+
+    <string name="pref_currency_title">Coin Preference</string>
+
+    <string name="pref_btc_key">pref_btc</string>
+    <string name="pref_eth_key">pref_eth</string>
+    <string name="pref_ltc_key">pref_ltc</string>
+    <string name="pref_xmr_key">pref_xmr</string>
+    <string name="pref_xrp_key">pref_xrp</string>
+    <string name="pref_doge_key">pref_doge</string>
+
+    <string name="pref_btc_title">Bitcoin</string>
+    <string name="pref_eth_title">Ethereum</string>
+    <string name="pref_ltc_title">Lite Coin</string>
+    <string name="pref_xmr_title">Monero</string>
+    <string name="pref_xrp_title">Ripple</string>
+    <string name="pref_doge_title">Doge Coin</string>
+
 </resources>

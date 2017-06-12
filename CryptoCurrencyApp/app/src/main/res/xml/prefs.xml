@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="@string/pref_currency_title">
+        <CheckBoxPreference
+            android:key="@string/pref_btc_key"
+            android:title="@string/pref_btc_title"
+            android:defaultValue="true" />
+        <CheckBoxPreference
+            android:key="@string/pref_eth_key"
+            android:title="@string/pref_eth_title"
+            android:defaultValue="false" />
+        <CheckBoxPreference
+            android:key="@string/pref_ltc_key"
+            android:title="@string/pref_ltc_title"
+            android:defaultValue="false" />
+        <CheckBoxPreference
+            android:key="@string/pref_xmr_key"
+            android:title="@string/pref_xmr_title"
+            android:defaultValue="false" />
+        <CheckBoxPreference
+            android:key="@string/pref_xrp_key"
+            android:title="@string/pref_xrp_title"
+            android:defaultValue="false" />
+        <CheckBoxPreference
+            android:key="@string/pref_doge_key"
+            android:title="@string/pref_doge_title"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
