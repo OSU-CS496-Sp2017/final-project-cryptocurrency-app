@@ -3,6 +3,8 @@
 
     <string name="pref_currency_title">Coin Preference</string>
 
+    <string name="action_settings">Settings</string>
+
     <string name="pref_btc_key">pref_btc</string>
     <string name="pref_eth_key">pref_eth</string>
     <string name="pref_ltc_key">pref_ltc</string>
