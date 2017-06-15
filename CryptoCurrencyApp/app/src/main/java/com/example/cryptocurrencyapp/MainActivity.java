@@ -107,11 +107,6 @@ public class MainActivity extends AppCompatActivity implements CryptoCurrencyAda
         ArrayList<String> cryptonatorURLs = new ArrayList<>();
         for(String currency : currencies) {
             cryptonatorURLs.add(CryptonatorUtils.buildCryptonatorURL(currency));
-            //cryptonatorURLs.add(CryptonatorUtils.buildCryptonatorURL("eth-usd"));
-            //cryptonatorURLs.add(CryptonatorUtils.buildCryptonatorURL("ltc-usd"));
-            //cryptonatorURLs.add(CryptonatorUtils.buildCryptonatorURL("xmr-usd"));
-            //cryptonatorURLs.add(CryptonatorUtils.buildCryptonatorURL("xrp-usd"));
-            //cryptonatorURLs.add(CryptonatorUtils.buildCryptonatorURL("doge-usd"));
         }
         Log.d("MainActivity", "got search url: " + cryptonatorURLs.toString());
         new CryptoCurrencySearchTask().execute(cryptonatorURLs);
